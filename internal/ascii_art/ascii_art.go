@@ -22,7 +22,7 @@ func Generate(dest image.Image, threshold int) string {
 	for y := 0; y < srcBounds.Max.Y; y += 2 {
 		line := strings.Builder{}
 
-		for x := 0; x < srcBounds.Max.X; x++ {
+		for x := range srcBounds.Max.X {
 			c := color.GrayModel.Convert(dest.At(x, y))
 			gray, _ := c.(color.Gray)
 			if gray.Y < uint8(threshold) {
@@ -33,8 +33,7 @@ func Generate(dest image.Image, threshold int) string {
 		}
 
 		if len(strings.Fields(line.String())) != 0 {
-			asciiArt.WriteString(line.String())
-			asciiArt.WriteString("\n")
+			asciiArt.WriteString(line.String() + "\n")
 		}
 	}
 
@@ -50,8 +49,8 @@ func selectRandomly(chars string) string {
 func CalcOTSUThreshold(dest image.Image, ySize, xSize int) int {
 	histogram := make([]int, 256) // 0 - 255 histogram
 
-	for y := 0; y < ySize; y++ {
-		for x := 0; x < xSize; x++ {
+	for y := range ySize {
+		for x := range xSize {
 			c := color.GrayModel.Convert(dest.At(x, y))
 			gray, _ := c.(color.Gray)
 			histogram[gray.Y]++
@@ -61,12 +60,12 @@ func CalcOTSUThreshold(dest image.Image, ySize, xSize int) int {
 	t := 0
 	max := 0.0
 
-	for i := 0; i < 256; i++ {
+	for i := range 256 {
 		w1, w2 := 0, 0     // pixel number
 		sum1, sum2 := 0, 0 // total gray value
 		m1, m2 := 0.0, 0.0 // average gray value
 
-		for j := 0; j < i; j++ {
+		for j := range i {
 			w1 += histogram[j]
 			sum1 += histogram[j] * j
 		}
