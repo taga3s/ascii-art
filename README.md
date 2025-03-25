@@ -2,7 +2,7 @@
 
 A CLI tool for generating ASCII Art from any image you like.
 
-![ascii-art-gen](https://github.com/ayanami77/ascii-art-gen/assets/107479598/31ac8872-90d0-4a59-a99a-ae4e9d6587df)
+![ascii-art-gen](https://github.com/taga3s/ascii-art-gen/assets/107479598/31ac8872-90d0-4a59-a99a-ae4e9d6587df)
 
 ## Usage
 
