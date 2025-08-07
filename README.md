@@ -2,7 +2,7 @@
 
 A CLI tool for generating ASCII Art from any image you like.
 
-![ascii-art](https://github.com/taga3s/ascii-art/assets/107479598/31ac8872-90d0-4a59-a99a-ae4e9d6587df)
+<img src="https://github.com/taga3s/ascii-art/assets/107479598/31ac8872-90d0-4a59-a99a-ae4e9d6587df" alt="ascii-art logo" width="670" style="display: block; margin: 0 auto;">
 
 ## Usage
 
@@ -26,4 +26,4 @@ $ ascii-art -m 2.0 ./cat.png
 
 ## License
 
-- MIT
+- [MIT](https://github.com/taga3s/ascii-art/blob/main/LICENSE)
