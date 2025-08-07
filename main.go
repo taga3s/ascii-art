@@ -14,12 +14,6 @@ const (
 	DefaultMagnification = 1.0
 )
 
-type Inputs struct {
-	path          string
-	threshold     int
-	magnification float64
-}
-
 func main() {
 	app := &cli.App{
 		Flags: []cli.Flag{
@@ -35,8 +29,7 @@ func main() {
 			},
 		},
 		Action: func(c *cli.Context) error {
-			err := runApp(c)
-			if err != nil {
+			if err := run(c); err != nil {
 				return err
 			}
 			return nil
@@ -48,7 +41,13 @@ func main() {
 	}
 }
 
-func runApp(c *cli.Context) error {
+type Inputs struct {
+	path          string
+	threshold     int
+	magnification float64
+}
+
+func run(c *cli.Context) error {
 	inputs := Inputs{}
 	if c.NArg() != 1 {
 		return fmt.Errorf("invalid number of arguments")
@@ -82,8 +81,7 @@ func runApp(c *cli.Context) error {
 	// Print the ASCII Art
 	fmt.Print(output)
 
-	err = img.UnSync(resizedImg)
-	if err != nil {
+	if err := img.UnSync(resizedImg); err != nil {
 		return err
 	}
 
