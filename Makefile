@@ -12,9 +12,3 @@ fmt:
 test:
 		@echo "Running tests..."
 		@go test -v ./...
-
-release-check:
-		goreleaser check
-
-release-snapshot:
-		goreleaser release --snapshot --clean
