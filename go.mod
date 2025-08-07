@@ -4,7 +4,7 @@ go 1.24
 
 require (
 	github.com/urfave/cli/v2 v2.27.2
-	golang.org/x/image v0.18.0
+	golang.org/x/image v0.29.0
 )
 
 require (
