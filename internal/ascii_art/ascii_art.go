@@ -9,7 +9,7 @@ import (
 )
 
 const (
-	validChars = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+	ValidChars = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
 )
 
 // `Generate` generates an ASCII art from an image.
@@ -28,7 +28,7 @@ func Generate(dest image.Image, threshold int) string {
 			if gray.Y < uint8(threshold) {
 				line.WriteString(" ")
 			} else {
-				line.WriteString(selectRandomly(validChars))
+				line.WriteString(randomChars(ValidChars))
 			}
 		}
 
@@ -40,7 +40,7 @@ func Generate(dest image.Image, threshold int) string {
 	return asciiArt.String()
 }
 
-func selectRandomly(chars string) string {
+func randomChars(chars string) string {
 	r := rand.Intn(len(chars))
 	return string(chars[r])
 }
