@@ -1,6 +1,6 @@
 # ascii-art
 
-A CLI tool for generating ASCII Art from any image you like.
+A CLI tool that generates ASCII art from any image you like.
 
 ![ascii-art](https://github.com/taga3s/ascii-art/assets/107479598/31ac8872-90d0-4a59-a99a-ae4e9d6587df)
 
