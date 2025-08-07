@@ -1,4 +1,4 @@
-module ascii-art-gen
+module ascii-art
 
 go 1.23
 

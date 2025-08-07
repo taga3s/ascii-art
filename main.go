@@ -1,8 +1,8 @@
 package main
 
 import (
-	asciiArt "ascii-art-gen/internal/ascii_art"
-	"ascii-art-gen/internal/img"
+	asciiArt "ascii-art/internal/ascii_art"
+	"ascii-art/internal/img"
 	"fmt"
 	"log"
 	"os"

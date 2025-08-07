@@ -1,8 +1,8 @@
-PROJECT_NAME=ascii-art-gen
+PROJECT_NAME=ascii-art
 
 build:
 		@echo "Building the project..."
-		@go build -o ./$(PROJECT_NAME) ./main.go
+		@go build -o ./dist/$(PROJECT_NAME) ./main.go
 		@echo "Build successful!"
 
 fmt:
