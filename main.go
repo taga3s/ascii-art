@@ -10,9 +10,7 @@ import (
 	"github.com/urfave/cli/v2"
 )
 
-const (
-	DefaultMagnification = 1.0
-)
+const DefaultMagnification = 1.0
 
 func main() {
 	app := &cli.App{
@@ -54,7 +52,6 @@ func run(c *cli.Context) error {
 	}
 	inputs.path = c.Args().Get(0)
 
-	// Load the image
 	srcImg, err := img.Load(inputs.path)
 	if err != nil {
 		return err
@@ -66,7 +63,6 @@ func run(c *cli.Context) error {
 		inputs.magnification = DefaultMagnification
 	}
 
-	// Resize the image
 	resizedImg := img.Resize(srcImg, inputs.magnification)
 
 	if c.IsSet("threshold") {
@@ -75,10 +71,8 @@ func run(c *cli.Context) error {
 		inputs.threshold = asciiArt.CalcOTSUThreshold(resizedImg, resizedImg.Bounds().Dy(), resizedImg.Bounds().Dx())
 	}
 
-	// Generate the ASCII Art
 	output := asciiArt.Generate(resizedImg, inputs.threshold)
 
-	// Print the ASCII Art
 	fmt.Print(output)
 
 	if err := img.UnSync(resizedImg); err != nil {

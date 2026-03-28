@@ -8,11 +8,9 @@ import (
 	"strings"
 )
 
-const (
-	ValidChars = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
-)
+const ValidChars = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
 
-// `Generate` generates an ASCII art from an image.
+// Generates an ASCII art from an image.
 func Generate(dest image.Image, threshold int) string {
 	srcBounds := dest.Bounds()
 
@@ -45,7 +43,7 @@ func randomChars(chars string) string {
 	return string(chars[r])
 }
 
-// `CalcOTSUThreshold` calculates the threshold value using the OTSU's method.
+// Calculates the threshold value using the OTSU's method.
 func CalcOTSUThreshold(dest image.Image, ySize, xSize int) int {
 	histogram := make([]int, 256) // 0 - 255 histogram
 

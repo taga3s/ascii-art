@@ -11,11 +11,11 @@ func TestLoad(t *testing.T) {
 	}{
 		{
 			name: "valid png image",
-			path: "../../examples/tests/cat.png",
+			path: "../../examples/cat.png",
 		},
 		{
 			name: "valid jpg image",
-			path: "../../examples/tests/cat.jpg",
+			path: "../../examples/cat.jpg",
 		},
 	}
 
@@ -36,11 +36,11 @@ func TestUnSync(t *testing.T) {
 	}{
 		{
 			name: "valid png image",
-			path: "../../examples/tests/cat.png",
+			path: "../../examples/cat.png",
 		},
 		{
 			name: "valid jpg image",
-			path: "../../examples/tests/cat.jpg",
+			path: "../../examples/cat.jpg",
 		},
 	}
 
